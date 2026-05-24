@@ -6,9 +6,10 @@ import plotly.express as px
 st.set_page_config(page_title="Monitor de Acuario Marino", layout="wide", page_icon="🐠")
 st.title("🐠 Monitor de Acuario Marino — Panel Dinámico")
 
-# Tu ID de documento de Google Sheets y pestaña 'Registro'
+# === 🛠️ CONFIGURACIÓN DE TU NUEVA HOJA EN LA CUENTA LIMPIA ===
 id_documento = "1nD1guqzPzwfcSgLnUrTk0qeoZm9tRDOHjiI8IHoGhzY"
-id_pestana = "1119567990"
+id_pestana = "1568791642"  # Tu nuevo GID de pestaña
+# ======================================================
 
 url_definitiva = f"https://docs.google.com/spreadsheets/d/{id_documento}/gviz/tq?tqx=out:csv&gid={id_pestana}"
 
@@ -70,6 +71,7 @@ try:
         st.subheader("📌 Estado de la última medición")
         col1, col2, col3, col4, col5 = st.columns(5)
         
+        # Obtenemos la última fila registrada
         ultima_medicion = df.iloc[-1]
         
         with col1:
